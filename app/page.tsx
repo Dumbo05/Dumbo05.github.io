@@ -1,6 +1,6 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { useState } from 'react';
 import {
   ArrowUpRight,
   BookOpen,
@@ -12,92 +12,14 @@ import {
   Mail,
   MapPin,
   Menu,
-  Search,
   Sparkles,
   X,
 } from 'lucide-react';
-import { Input } from '@/components/ui/input';
-import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
-
-const projects = [
-  {
-    "title": "chat_emotion",
-    "description": "emotion · Python 项目",
-    "stack": [
-      "Python",
-      "个人仓库"
-    ],
-    "icon": "CE",
-    "url": "https://github.com/Dumbo05/chat_emotion"
-  },
-  {
-    "title": "Word × Qwen",
-    "description": "Word VBA 与通义千问 API 集成。",
-    "stack": [
-      "VBA",
-      "个人仓库"
-    ],
-    "icon": "WQ",
-    "url": "https://github.com/Dumbo05/Word-VBA-Macro-for-Tongyi-Qwen-API-Integration"
-  },
-  {
-    "title": "MiniMind Deep Dive",
-    "description": "MiniMind 源码与大模型学习笔记，Fork 收藏。",
-    "stack": [
-      "学习资料",
-      "Fork"
-    ],
-    "icon": "MD",
-    "url": "https://github.com/Dumbo05/minimind-deep-dive"
-  },
-  {
-    "title": "Nature Skills",
-    "description": "学术表达与科研绘图技能库，Fork 收藏。",
-    "stack": [
-      "科研工具",
-      "Fork"
-    ],
-    "icon": "NS",
-    "url": "https://github.com/Dumbo05/nature-skills"
-  }
-];
-
-const docs = [
-  {
-    "title": "MiniMind Deep Dive",
-    "category": "笔记",
-    "date": "",
-    "excerpt": "MiniMind 源码与大模型学习笔记，Fork 收藏。",
-    "url": "https://github.com/Dumbo05/minimind-deep-dive"
-  },
-  {
-    "title": "Nature Skills",
-    "category": "笔记",
-    "date": "",
-    "excerpt": "学术表达与科研绘图技能库，Fork 收藏。",
-    "url": "https://github.com/Dumbo05/nature-skills"
-  }
-];
-
-const categories = ['全部', '工程', '设计', '笔记'];
 const activeDays: Record<number, number> = {10:2,28:1,48:1,293:5,294:2,366:2,369:1};
 const contributionLevels = Array.from({length:371}, (_, i) => Math.min(activeDays[i] || 0, 4));
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [category, setCategory] = useState('全部');
-  const [query, setQuery] = useState('');
-  const filteredDocs = useMemo(
-    () =>
-      docs.filter(
-        (doc) =>
-          (category === '全部' || doc.category === category) &&
-          `${doc.title}${doc.excerpt}`
-            .toLowerCase()
-            .includes(query.toLowerCase()),
-      ),
-    [category, query],
-  );
 
   return (
     <main
@@ -152,10 +74,10 @@ export default function Home() {
               <a href="https://github.com/Dumbo05?tab=repositories" aria-label="仓库">
                 <Mail />
               </a>
-              <a href="#docs" aria-label="文档">
+              <a href={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/blog/`} aria-label="博客">
                 <BookOpen />
               </a>
-              <a href="#projects" aria-label="项目">
+              <a href="https://github.com/Dumbo05?tab=repositories" aria-label="项目">
                 <Code2 />
               </a>
             </div>
@@ -230,7 +152,7 @@ export default function Home() {
 
 
 
-          <section className="content-section" id="sites">
+          <section className="content-section website-panel glass" id="sites">
             <div className="section-title">
               <div>
                 <Globe2 />
@@ -241,7 +163,7 @@ export default function Home() {
               </div>
             </div>
             <div className="site-grid">
-              <a className="site-card glass blue" href="#projects">
+              <a className="site-card glass blue" href="https://github.com/Dumbo05?tab=repositories">
                 <span className="site-icon">
                   <Code2 />
                 </span>
@@ -252,7 +174,7 @@ export default function Home() {
                 </div>
                 <ArrowUpRight />
               </a>
-              <a className="site-card glass violet" href="#docs">
+              <a className="site-card glass violet" href="https://github.com/Dumbo05/minimind-deep-dive">
                 <span className="site-icon">
                   <BookOpen />
                 </span>
@@ -274,90 +196,6 @@ export default function Home() {
                 </div>
                 <ArrowUpRight />
               </a>
-            </div>
-          </section>
-
-          <section className="content-section" id="projects">
-            <div className="section-title">
-              <div>
-                <Code2 />
-                <span>
-                  <strong>项目集</strong>
-                  <small>个人仓库与 Fork 收藏</small>
-                </span>
-              </div>
-              <a href="https://github.com/Dumbo05">
-                全部项目 <ArrowUpRight />
-              </a>
-            </div>
-            <div className="project-grid">
-              {projects.map((project) => (
-                <a
-                  className="project-card glass"
-                  href={project.url}
-                  key={project.title}
-                >
-                  <span className="project-icon">{project.icon}</span>
-                  <div>
-                    <strong>{project.title}</strong>
-                    <p>{project.description}</p>
-                    <span className="stack">
-                      {project.stack.map((item) => (
-                        <small key={item}>{item}</small>
-                      ))}
-                    </span>
-                  </div>
-                  <ArrowUpRight className="project-arrow" />
-                </a>
-              ))}
-            </div>
-          </section>
-
-          <section className="content-section docs-section" id="docs">
-            <div className="section-title">
-              <div>
-                <BookOpen />
-                <span>
-                  <strong>文档与思考</strong>
-                  <small>项目说明与学习资料入口</small>
-                </span>
-              </div>
-            </div>
-            <div className="docs-tools glass">
-              <Tabs value={category} onValueChange={setCategory}>
-                <TabsList>
-                  {categories.map((item) => (
-                    <TabsTrigger key={item} value={item}>
-                      {item}
-                    </TabsTrigger>
-                  ))}
-                </TabsList>
-              </Tabs>
-              <label htmlFor="doc-search">
-                <Search />
-                <Input
-                  id="doc-search"
-                  placeholder="搜索文档"
-                  value={query}
-                  onChange={(event) => setQuery(event.target.value)}
-                />
-              </label>
-            </div>
-            <div className="docs-list glass">
-              {filteredDocs.map((doc) => (
-                <a href={doc.url} className="doc-row" key={doc.title}>
-                  <span className="doc-category">{doc.category}</span>
-                  <div>
-                    <strong>{doc.title}</strong>
-                    <p>{doc.excerpt}</p>
-                  </div>
-                  <time>{doc.date}</time>
-                  <ArrowUpRight />
-                </a>
-              ))}
-              {filteredDocs.length === 0 && (
-                <p className="empty">没有找到匹配的文档。</p>
-              )}
             </div>
           </section>
 

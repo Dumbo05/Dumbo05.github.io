@@ -406,6 +406,13 @@ input {
 .section-title {
   margin: 0 5px 14px;
 }
+.website-panel {
+  padding: 22px 24px 24px;
+  border-radius: 22px;
+}
+.website-panel .section-title {
+  margin: 0 2px 20px;
+}
 .site-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
