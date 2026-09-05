@@ -138,7 +138,8 @@ input {
   justify-content: center;
   gap: 10px;
 }
-.social-row a {
+.social-row a,
+.social-row button {
   width: 42px;
   height: 42px;
   border-radius: 12px;
@@ -146,14 +147,45 @@ input {
   place-items: center;
   border: 1px solid rgba(255, 255, 255, 0.16);
   background: rgba(255, 255, 255, 0.07);
+  color: inherit;
+  cursor: pointer;
   transition: 0.2s;
 }
-.social-row a:hover {
+.social-row a:hover,
+.social-row button:hover {
   transform: translateY(-3px);
   background: rgba(104, 183, 255, 0.23);
 }
 .social-row svg {
   width: 18px;
+}
+.wechat-dialog {
+  max-width: 410px;
+  gap: 10px;
+  padding: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: #0c1d32;
+  color: #fff;
+  text-align: center;
+}
+.wechat-dialog [data-slot='dialog-description'] {
+  color: #b9c8d8;
+}
+.wechat-dialog img {
+  width: 100%;
+  height: auto;
+  max-height: 68vh;
+  object-fit: contain;
+  margin-top: 6px;
+  border-radius: 14px;
+}
+.wechat-dialog-light {
+  border-color: rgba(37, 83, 123, 0.18);
+  background: #f4f9fd;
+  color: #17324a;
+}
+.wechat-dialog-light [data-slot='dialog-description'] {
+  color: #5d7386;
 }
 .profile-meta {
   display: flex;
@@ -239,6 +271,58 @@ input {
   display: flex;
   flex-direction: column;
   gap: 22px;
+}
+.page-frame,
+.page-frame .glass,
+.page-frame p,
+.page-frame small,
+.page-frame a,
+.page-frame button {
+  transition: color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+.light-mode {
+  color: #17324a;
+}
+.light-mode .glass {
+  background: rgba(240, 248, 255, 0.76);
+  border-color: rgba(39, 86, 126, 0.22);
+  box-shadow: 0 18px 50px rgba(38, 75, 110, 0.16);
+}
+.light-mode .role,
+.light-mode .eyebrow,
+.light-mode .section-title > div > svg,
+.light-mode .card-title > div > svg {
+  color: #116ca8;
+}
+.light-mode .bio,
+.light-mode .profile-meta,
+.light-mode .block-label,
+.light-mode .timeline span,
+.light-mode .section-title small,
+.light-mode .card-title small,
+.light-mode .site-card p,
+.light-mode .site-card small,
+.light-mode .contribution-foot {
+  color: #587086;
+}
+.light-mode .social-row a,
+.light-mode .social-row button,
+.light-mode .tag-cloud span,
+.light-mode .skill-list span {
+  background: rgba(255, 255, 255, 0.54);
+  border-color: rgba(39, 86, 126, 0.22);
+}
+.light-mode .social-row a:hover,
+.light-mode .social-row button:hover {
+  background: rgba(64, 150, 217, 0.18);
+}
+.light-mode .side-block,
+.light-mode .profile-panel footer,
+.light-mode .status-card {
+  border-color: rgba(39, 86, 126, 0.18);
+}
+.light-mode .contribution-foot strong {
+  color: #17324a;
 }
 .welcome {
   border-radius: 24px;
