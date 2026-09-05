@@ -109,7 +109,7 @@ export default function Home() {
     >
       <header className="mobile-bar">
         <a href="#top" className="mini-brand">
-          <span>D</span> Dumbo05&apos;s Space
+          <span>D</span> Dumbo&apos;s Space
         </a>
         <button
           type="button"
@@ -131,7 +131,7 @@ export default function Home() {
               <img
                 className="avatar"
                 src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/avatar.jpg`}
-                alt="Dumbo05 的头像：站在山峰上的人物"
+                alt="Dumbo 的头像：站在山峰上的人物"
                 width={118}
                 height={118}
                 style={{ objectFit: 'cover' }}
@@ -140,7 +140,7 @@ export default function Home() {
               <span className="orbit two">⌁</span>
               <span className="online-dot" />
             </div>
-            <h1>你好，我是 Dumbo05</h1>
+            <h1>你好，我是 Dumbo</h1>
             <p className="role">个人作品与学习记录</p>
             <p className="bio">
               记录项目实践，整理学习文档，探索代码与知识的更多可能。
@@ -202,7 +202,7 @@ export default function Home() {
           </div>
 
           <footer>
-            <span>© 2026 Dumbo05</span>
+            <span>© 2026 Dumbo</span>
             <a href="#top">回到顶部 ↑</a>
           </footer>
         </aside>
