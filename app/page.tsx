@@ -227,44 +227,7 @@ export default function Home() {
             </div>
           </section>
 
-          <section className="glass contribution-card">
-            <div className="card-title">
-              <div>
-                <GitBranch />
-                <span>
-                  <strong>GitHub 贡献图</strong>
-                  <small>GitHub 数据快照 · 2026-09-05</small>
-                </span>
-              </div>
-              <a href="https://github.com/Dumbo05">
-                查看主页 <ArrowUpRight />
-              </a>
-            </div>
-            <div className="contribution-wrap">
-              <div className="contribution-grid" aria-label="GitHub 贡献热力图">
-                {contributionLevels.map((level, index) => (
-                  <i key={index} data-level={level} />
-                ))}
-              </div>
-            </div>
-            <div className="contribution-foot">
-              <span>
-                <strong>14</strong> 次贡献
-              </span>
-              <span>
-                <strong>19</strong> 个仓库
-              </span>
-              <span>
-                <strong>2</strong> 天最长连续提交
-              </span>
-              <span className="legend">
-                少 <i data-level="1" />
-                <i data-level="2" />
-                <i data-level="3" />
-                <i data-level="4" /> 多
-              </span>
-            </div>
-          </section>
+
 
           <section className="content-section" id="sites">
             <div className="section-title">
@@ -416,6 +379,44 @@ export default function Home() {
               <span>WebGL</span>
               <span>Python</span>
               <span>Git</span>
+            </div>
+          </section>
+          <section className="glass contribution-card">
+            <div className="card-title">
+              <div>
+                <GitBranch />
+                <span>
+                  <strong>GitHub 贡献图</strong>
+                  <small>GitHub 数据快照 · 2026-09-05</small>
+                </span>
+              </div>
+              <a href="https://github.com/Dumbo05">
+                查看主页 <ArrowUpRight />
+              </a>
+            </div>
+            <div className="contribution-wrap">
+              <div className="contribution-grid" aria-label="GitHub 贡献热力图">
+                {contributionLevels.map((level, index) => (
+                  <i key={index} data-level={level} />
+                ))}
+              </div>
+            </div>
+            <div className="contribution-foot">
+              <span>
+                <strong>14</strong> 次贡献
+              </span>
+              <span>
+                <strong>19</strong> 个仓库
+              </span>
+              <span>
+                <strong>2</strong> 天最长连续提交
+              </span>
+              <span className="legend">
+                少 <i data-level="1" />
+                <i data-level="2" />
+                <i data-level="3" />
+                <i data-level="4" /> 多
+              </span>
             </div>
           </section>
         </section>
