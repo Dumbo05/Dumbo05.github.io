@@ -169,15 +169,16 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="side-block">
-            <p className="block-label">正在关注</p>
-            <div className="tag-cloud">
-              <span>AI 产品</span>
-              <span>设计系统</span>
-              <span>Local-first</span>
-              <span>Creative Code</span>
-            </div>
-          </div>
+              <div className="side-block">
+                <p className="block-label">正在关注</p>
+                <div className="tag-cloud">
+                  <span>Agent 开发</span>
+                  <span>LLM</span>
+                  <span>RAG</span>
+                  <span>LangChain</span>
+                  <span>嵌入式</span>
+                </div>
+              </div>
 
           <div className="side-block">
             <p className="block-label">近况</p>

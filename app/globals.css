@@ -178,6 +178,7 @@ input {
   margin-top: 24px;
 }
 .block-label {
+  margin: 0 0 14px;
   font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 0.14em;
