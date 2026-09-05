@@ -128,7 +128,14 @@ export default function Home() {
         >
           <div className="profile-head">
             <div className="avatar-wrap">
-              <div className="avatar">D</div>
+              <img
+                className="avatar"
+                src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/avatar.jpg`}
+                alt="Dumbo05 的头像：站在山峰上的人物"
+                width={118}
+                height={118}
+                style={{ objectFit: 'cover' }}
+              />
               <span className="orbit one">✦</span>
               <span className="orbit two">⌁</span>
               <span className="online-dot" />
