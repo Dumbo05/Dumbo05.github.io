@@ -10,7 +10,7 @@ await mkdir(blogDirectory, { recursive: true });
 await copyFile(new URL('blog.html', output), new URL('blog/index.html', output));
 
 for (const entry of await readdir(blogDirectory, { withFileTypes: true })) {
-  if (!entry.isFile() || !entry.name.endsWith('.html')) continue;
+  if (!entry.isFile() || entry.name === 'index.html' || !entry.name.endsWith('.html')) continue;
   const slug = entry.name.slice(0, -'.html'.length);
   const targetDirectory = join(blogPath, slug);
   await mkdir(targetDirectory, { recursive: true });
