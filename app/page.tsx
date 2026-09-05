@@ -262,7 +262,7 @@ export default function Home() {
                 </div>
                 <ArrowUpRight />
               </a>
-              <a className="site-card glass pink" href="#docs">
+              <a className="site-card glass pink" href={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/blog/`}>
                 <span className="site-icon">
                   <FileText />
                 </span>

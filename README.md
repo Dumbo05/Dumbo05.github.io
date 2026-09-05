@@ -2,7 +2,9 @@
 
 线上主页：https://dumbo05.github.io/
 
-本仓库目前已使用 **gh-pages 分支根目录** 发布，main 保存源码。维护与重新发布请参阅 [DEPLOYMENT.md](DEPLOYMENT.md)。下方 GitHub Actions 步骤为可选替代方案，当前未启用；对应示例为 deploy-workflow.example.yml。
+线上博客：https://dumbo05.github.io/blog/
+
+本仓库目前已使用 **gh-pages 分支根目录** 发布，main 保存源码。维护与重新发布请参阅 [DEPLOYMENT.md](DEPLOYMENT.md)，写文章请参阅 [BLOG-WRITING.md](BLOG-WRITING.md)。GitHub Actions 步骤是可选替代方案，当前未启用；对应示例为 deploy-workflow.example.yml。
 
 一个适合部署到 GitHub Pages 的静态个人主页，包含作品展示、文档分类与搜索、个人介绍和深浅色切换。
 
